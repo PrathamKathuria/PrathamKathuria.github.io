@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanna See Pratham's Crush? 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGVidzA3azhqbmQxanlpNm1nMXBkYzJlcHA5MDh2YXppMXpjdHA3NCZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/3odxXG6oUNRVhsdcLK/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            fit-width: 100%;
+            height: 100%;
+        }
+
+        .question,
+        #security,
+        #reveal {
+            display: none;
+            background: rgba(255, 182, 193, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 500px;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
+            font-size: 1.3em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, left 0.3s, top 0.3s;
+            position: relative;
+            font-family: 'Pacifico', cursive;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background: #ff1493;
+            transform: scale(1.1);
+        }
+
+        .moving-no {
+            position: relative;
+        }
+
+
+        #reveal img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+	.reveal-bg {
+            background: url('https://i.ibb.co/TqTRbFZK/love-languages.gif')repeat right center fixed!important;
+            background-size: 498px 438px !important;
+        }
+
+        h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 2.5em;
+            color: #FF1493;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+	p{
+	font-family: 'Pacifico', cursive;
+font-size:1.25em;}
+    </style>
+</head>
+
+<body>
+    <h1>Wanna See Pratham's Crush? 💖</h1>
+    <div id="questions">
+        <div class="question active">
+            <p>✨ Do you believe in love at first sight? ✨</p>
+            <button onclick="nextQuestion(1, true)">Yes 😊</button>
+            <button class="moving-no">No 😢</button>
+        </div>
+        <div class="question">
+            <p>💕 Do you think Pratham has a great choice? 💕</p>
+            <button onclick="nextQuestion(2, true)">Yes 😍</button>
+            <button class="moving-no">No 😏</button>
+        </div>
+        <div class="question">
+            <p>🎉 Are you ready to see Pratham's love? 🎉</p>
+            <button onclick="nextQuestion(3, true)">Yes 😁</button>
+            <button class="moving-no">No 🤔</button>
+        </div>
+        <div class="question">
+            <p>🌟 Do you promise not to be jealous? 🌟</p>
+            <button onclick="nextQuestion(4, true)">Yes 😂</button>
+            <button class="moving-no">No 🙃</button>
+        </div>
+        <div class="question">
+            <p>🤔 Do you like surprises? 🤔</p>
+            <button onclick="nextQuestion(5, true)">Yes 😃</button>
+            <button class="moving-no">No 😜</button>
+        </div>
+    </div>
+    <div id="security">
+        <p>In which class does she study? 💌</p>
+        <input type="text" id="securityAnswer" style="padding: 10px; border-radius: 5px; width: 80%;">
+        <button onclick="checkSecurity()">Submit 🚀</button>
+    </div>
+    <div id="reveal">
+        <h1 style="font-size: 1.4em; color:#FF69B4;">She is Pratham's Love at First Sight! 💖</h1>
+        <img src="https://i.ibb.co/1x6H3MN/image.jpg" alt="image" border="0">
+	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4thOONDx78zsY8sHGfU1M2?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" autoplay></iframe></audio>
+    </div>
+</script>
+    <script>
+        let currentQuestion = 0;
+        document.querySelectorAll('.question')[currentQuestion].style.display = 'block';
+
+        function nextQuestion(questionNum, answer) {
+            document.querySelectorAll('.question')[questionNum - 1].style.display = 'none';
+            if (questionNum < 5) {
+                document.querySelectorAll('.question')[questionNum].style.display = 'block';
+            } else {
+                document.getElementById('security').style.display = 'block';
+            }
+        }
+
+        function checkSecurity() {
+            let answer = document.getElementById('securityAnswer').value.trim();
+            if (answer === '10th') {
+                document.getElementById('security').style.display = 'none';
+                document.getElementById('reveal').style.display = 'block';
+                document.body.classList.add("reveal-bg");
+                confettiEffect();
+            } else {
+                alert('You do not know her really! 😢');
+            }
+        }
+
+        function confettiEffect() {
+            let confetti = document.createElement('div');
+            confetti.innerHTML = "";
+            confetti.style.position = 'fixed';
+            confetti.style.top = '10px';
+            confetti.style.left = '50%';
+            confetti.style.fontSize = '2em';
+            confetti.style.animation = 'fall 2s linear infinite';
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 2000);
+        }
+
+	document.querySelectorAll('.moving-no').forEach(button => {
+            button.addEventListener('mouseover', function () {
+                this.style.left = Math.random() * 80 + 'vw';
+                this.style.top = Math.random() * 80 + 'vh';
+            });
+        });
+    </script>
+</body>
+
+</html>
